@@ -4,7 +4,7 @@
 // Activating Strict Mode
 // strict mode helps our code from producing any bugs. Basically, it warns us in the console if something is wrong inside our code. So, it is recommended to always activate strict mode at the first line.
 
-//////////////////////// Functions /////////////////////////
+//////////////////// Functions ////////////////////
 /*
 function printing() {
   console.log("JavaScript is fun");
@@ -31,7 +31,7 @@ const appleJuice = fruitProcessor(3, 4);
 console.log(appleJuice); // This is another way ofshowing the result on the console
 */
 
-/////// Function Declaration vs Function Expression ///////
+/// Function Declaration vs Function Expression ///
 
 // Function Declaration //
 
@@ -105,7 +105,7 @@ console.log(age1, age2); // Output: 23 23
 
 // Internally this happens because of a process called Hoisting.
 
-///////////////////// Arrow Functions //////////////////////
+///////////////// Arrow Functions /////////////////
 
 // An Arrow function is simply a special form of function expression that is shorter therefore faster to write.
 
@@ -158,7 +158,7 @@ console.log(yearsUntilRetirement(2000, "Sushmoy"));
 console.log(yearsUntilRetirement(1989, "Sabbir"));
 */
 
-/////////// Functions calling another functions ///////////
+/////// Functions calling another functions ///////
 
 /*
 function cutFruitPieces(fruit) {
@@ -178,7 +178,7 @@ console.log(fruitProcessor(3, 2));
 
 // This is one silly example of Function calling another Function.
 
-/////////////////// Reviewing functions ///////////////////
+/////////////// Reviewing functions ////////////////
 
 /*
 const calcAge = function (birthYear) {
@@ -283,7 +283,7 @@ console.log(yearsUntilRetirement(1950, "Bob"));
 
 // So, basically we use functions to reuse pieces of code.
 
-//////////////// Introduction to Arrays //////////////////
+///////////// Introduction to Arrays //////////////
 
 // let's say we want to represent 10 friends and then we would have to create 10 variables which is not efficient.
 
@@ -390,7 +390,7 @@ const age = [
 console.log(age);
 */
 
-//////////// Basic Array Operations (Methods) ////////////
+///////// Basic Array Operations (Methods) /////////
 
 // JavaScript has some built in functions that we can apply directly on Arrays. And these are called Methods. We can think of these methods as Array operations.
 
@@ -457,7 +457,7 @@ console.log(gpuCompanies.includes(24)); // true
 if (gpuCompanies.includes("Zotac")) console.log("You have a Zotac GPU!");
 */
 
-//////////////// Introduction to Objects //////////////////
+///////////// Introduction to Objects //////////////
 
 // Just to Recap an Array is a data stucture to store multiple related values in the same variable. //
 
@@ -567,7 +567,7 @@ console.log(
 );
 */
 
-///////////////////// Object Methods ///////////////////////
+////////////////// Object Methods /////////////////
 
 // functions are really just another type of value. And if a function is just a value then that means that we can create a key value pair in which the value is a function.And that then means that we can in fact, add functions to Objects.
 /*
@@ -699,7 +699,7 @@ const sushmoy = {
 console.log(sushmoy.getSummery());
 */
 
-//////////////// Iteration_The for Loop ///////////////////
+/////////// Iteration_The for Loop //////////////
 
 // loop is one of the other control structures like if else statement.
 
@@ -727,7 +727,7 @@ for (let rep = 1; rep <= 10; rep++) {
 }
 */
 
-////////// Looping Arrays, Breaking and Counting ///////////
+////// Looping Arrays, Breaking and Counting ///////
 
 // How to read array elements using the for loop :
 /*
@@ -795,7 +795,7 @@ for (let i = 0; i < arr.length; i++) {
 }
 */
 
-//////////// Looping Backwards and Nested Loop /////////////
+//////// Looping Backwards and Nested Loop /////////
 
 // Previously, we have looped from the beginning. However, this time we'll try something different.
 
@@ -825,7 +825,7 @@ for (let exercise = 1; exercise < 4; exercise++) {
 }
 */
 
-///////////////////// The While Loop //////////////////////
+////////////////// The While Loop //////////////////
 
 // Inside a while loop we can only pass a conditon and that's it. for example:
 /*
