@@ -80,7 +80,7 @@ console.log(calcAmplitude(temperatures));
 // Solution:
 /*
 const calcAmplitudeNew = function (t1, t2) {
-  let temps = t1.concat(t2);
+  let temps = t1.concat(t2); // VERY IMPORTANT
   let max = temps[0];
   let min = temps[0];
   for (let i = 0; i < temps.length; i++) {
