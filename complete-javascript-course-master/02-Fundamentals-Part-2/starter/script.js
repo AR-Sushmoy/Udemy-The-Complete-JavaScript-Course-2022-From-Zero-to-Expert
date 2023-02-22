@@ -815,6 +815,7 @@ for (let i = sara.length - 1; i >= 0; i--) {
   console.log(i, sara[i]);
 }
 */
+
 // Let's now program a exercise on Nested Loop
 /*
 for (let exercise = 1; exercise < 4; exercise++) {
@@ -825,6 +826,23 @@ for (let exercise = 1; exercise < 4; exercise++) {
 }
 */
 
+// Exercise: 2D array element multiply
+/*
+const arr = [
+  [1, 2],
+  [3, 4],
+  [5, 6, 7],
+];
+let multiply = 1;
+for (let i = 0; i < arr.length; i++) {
+  for (let j = 0; j < arr[i].length; j++) {
+    console.log(arr[i][j]);
+    multiply *= arr[i][j];
+  }
+}
+
+console.log(multiply);
+*/
 ////////////////// The While Loop //////////////////
 
 // Inside a while loop we can only pass a conditon and that's it. for example:

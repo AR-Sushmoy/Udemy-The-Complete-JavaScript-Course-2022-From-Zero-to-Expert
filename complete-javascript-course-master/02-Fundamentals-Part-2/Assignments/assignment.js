@@ -75,7 +75,7 @@ const describePopulation = function (country, population) {
 
 const populations = [169.4, 273.6, 220.9, 145.93];
 
-// populations.length === 4 ? console.log(true) : console.log(false);
+// console.log(populations.length === 4);
 
 const percentages = [
   percentageOfWorld(populations[0]),
@@ -93,27 +93,30 @@ const neighbours = ['Poland', 'France', 'Italy', 'Greece'];
 neighbours.push('Utopia');
 
 neighbours.pop();
-/*
-if (neighbours.includes("Germany") !== true)
-  console.log("Probably not a central European country :D");
 
-console.log(neighbours.indexOf("Poland"));
+/*if (neighbours.includes("Germany") !== true)*/
+// This condition says, if neighbours array has germany element this statement is false then execute the string.
 
-if (neighbours.indexOf("Poland") === 0) {
-  neighbours[0] = "Republic of Poland";
-  console.log(neighbours[0]);
-}
-*/
+// - Another way of doing the same thing
+if (!neighbours.includes('Germany'))
+  // This condition says, if neighbours array does not(!)  have germany element then execute the string.
+
+  console.log('Probably not a central European country :D');
+
+neighbours[neighbours.indexOf('Italy')] = 'Republic of italy';
+
+console.log(neighbours);
 
 /////// Lecture: Introduction to Objects ///////
-
-// const myCountry = {
-//   country: 'Ireland',
-//   capital: 'Dublin',
-//   language: 'Irish',
-//   population: 5.033,
-//   neighbours: ['Wales', 'Italy', 'Finland', 'Spain'],
-// };
+/*
+const myCountry = {
+  country: 'Ireland',
+  capital: 'Dublin',
+  language: 'Irish',
+  population: 5.033,
+  neighbours: ['Wales', 'Italy', 'Finland', 'Spain'],
+};
+*/
 
 /////// Lecture: Dot vs. Bracket Notation ///////
 /*
@@ -121,21 +124,13 @@ console.log(
   `${myCountry.country} has ${myCountry.population} million ${myCountry.language} speaking people, ${myCountry.neighbours.length} neibouring countries and a capital called ${myCountry.capital}.`
 );
 
-let x = myCountry.population + 2;
+myCountry.population += 2;
 
-console.log(
-  `${myCountry.country} has ${x} million ${myCountry.language} speaking people, ${myCountry.neighbours.length} neibouring countries and a capital called ${myCountry.capital}.`
-);
+console.log(myCountry.population);
 
-x = myCountry['population'] - 2;
+myCountry['population'] -= 2;
 
-console.log(
-  `${myCountry.country} has ${parseFloat(x).toFixed(3)} million ${
-    myCountry.language
-  } speaking people, ${
-    myCountry.neighbours.length
-  } neibouring countries and a capital called ${myCountry.capital}.`
-);
+console.log(myCountry.population);
 */
 
 /////////// Lecture: Object Methods ////////////
@@ -162,7 +157,52 @@ const myCountry = {
 };
 
 // myCountry.describe();
-myCountry.checkIsland();
+// myCountry.checkIsland();
 
-console.log(myCountry.isIsland);
-console.log(myCountry);
+// console.log(myCountry.isIsland);
+// console.log(myCountry);
+
+/////////// Lecture: Iteration: The for Loop ////////////
+
+for (let i = 1; i <= 50; i++) {
+  // console.log(`Voter number ${i} is currently voting`);
+}
+
+/// Lecture: Looping Arrays, Breaking and Continuing ///
+
+const percentageOfWorldNew = function (population) {
+  const percentage = (population / 7900) * 100;
+  return parseFloat(percentage).toFixed(2);
+};
+
+const population = [169.4, 273.6, 220.9, 145.93];
+const percentage2 = [];
+
+for (let i = 0; i < population.length; i++) {
+  percentage2.push(percentageOfWorldNew(population[i]));
+}
+
+console.log(percentage2);
+
+/// Lecture: Looping Backwards and Loops in Loops ///
+
+const listOfNeighbours = [
+  ['Canada', 'Mexico'],
+  ['Spain'],
+  ['Norway', 'Sweden', 'Russia'],
+];
+
+for (let i = 0; i < listOfNeighbours.length; i++) {
+  for (let j = 0; j < listOfNeighbours[i].length; j++) {
+    // console.log(`Neighbour: ${listOfNeighbours[i][j]}`);
+  }
+}
+
+////////////// Lecture: The while Loop ///////////////
+const percentage3 = [];
+let i = 0;
+while (i < population.length) {
+  percentage3.push(percentageOfWorldNew(population[i]));
+  i++;
+}
+console.log(percentage3);
