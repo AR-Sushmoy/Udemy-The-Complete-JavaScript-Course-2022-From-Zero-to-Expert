@@ -857,7 +857,9 @@ while (rep < 11) {
 // So what we're gonna do is roll a dice and then keep rolling the dice until we roll a six. And then when we roll a six, we stop. So essentially we will want to keep running the loop while the rolled dice is different from six. And so in this case, we don't know beforehand how many times the loop should run. And so we don't need a counter variable and that's exactly the use case of a while loop.
 /*
 let dice = Math.trunc(Math.random() * 6) + 1;
-// here. Math.random() method generates a random value between 0 and 1 in decimal. And to truncate the decimal values we used this Math.trunc() method.
+
+// So, math is basically an object that JavaScript gives us, and on there, we have a lot of different methods, and random is one of them. Math.random() gives us a number between zero and one in decimal which means 0.1111 to maximum 0.999999 . So whenever we run this, it will give us a new number. And it's always different from the one before. Now if we want a number between one and 6, we will have start by multiplying this by 6. And so now we have this decimal number here, basically ranging between zero and 6. But all this decimal here is just noise, so let's removed that. And for that, we use Math.trunc() . Now we have a number which goes from zero to 5. Because the result of math.trunc(Math.random()) will never really include the number 6. It might only include like 5.999999, but now we're cutting off that decimal part. And so we are now left with a number between zero and five. And so to elevate it to between one and six, all you have to do is to add one here.
+
 
 while (dice !== 6) {
   console.log(`You rolled a ${dice}`);
