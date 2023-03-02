@@ -253,7 +253,6 @@ document.querySelector('.again').addEventListener('click', function () {
 
 // Our Secret number generator code
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
-
 let score = 10;
 let highScore = 0;
 // created display function to follow the DRY (Don't Repeat Yourself) principle
@@ -309,7 +308,7 @@ document.querySelector('.again').addEventListener('click', function () {
 
   // Second step - Restore the initial conditions of the message, number, score and guess input field
   // document.querySelector('.message').textContent = 'Start guessing...';
-  displayMessage('Start guessing...');
+  displayMessage('💭 Start guessing...');
   document.querySelector('.number').textContent = '?';
   document.querySelector('.score').textContent = score;
   document.querySelector('.guess').value = ' ';
