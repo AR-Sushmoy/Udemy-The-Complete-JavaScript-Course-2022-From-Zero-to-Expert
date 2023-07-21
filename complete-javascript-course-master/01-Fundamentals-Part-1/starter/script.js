@@ -1,4 +1,14 @@
-////// Naming Convensions and Data types //////
+/////////////////////////////
+////// 002 Hello World //////
+/////////////////////////////
+
+alert("Hello World");
+
+//////////////////////////////////////
+////// 005 Values and Variables //////
+//////////////////////////////////////
+
+/* Naming Convensions and Data types */
 
 /* let js = "Amazing";
 
@@ -17,12 +27,42 @@ let _mouseCompany = "EngGameGear";
 console.log(_mouseCompany);
 
 let myFirstJob = "Programmer";
+let myCurrentJob = "Teacher";
 
 console.log(myFirstJob);
 
 let PI = 3.1416; //Constant Variable
 
 console.log(PI);
+*/
+
+////////////////////////////
+////// 007 Data types //////
+////////////////////////////
+
+// first of all, in JavaScript, every value is either an object or a primitive value. So, a value is only a primitive when it's not an object.
+
+/* Object --> 
+let me = {
+  name: 'Sushmoy'
+};
+*/
+
+// or
+
+/* Primitive -->
+let firstName = 'Abu Rayhan';
+let age = 23;
+*/
+
+/* there are seven primitive data types: 
+number, 
+string, 
+boolean, 
+undefined,
+null, 
+symbol and 
+big int.
 */
 
 /* Dynamic Typing */
@@ -48,35 +88,40 @@ console.log(typeof null);
 /* 
 output says it's an object. Whereas this should print null. Now, about this bug JavaScript says that a type of null is an object and this doesn't make any sense at all. And so this is regarded as a bug or error in JavaScript. However, this bug is never corrected for Legacy reasons. But null is ofcourse is not an object. This should return null as undefined returns undefined as expected. 
 */
-/*
-const birthYear = 2000;
-console.log(birthYear);
+
+// const birthYear = 2000;
+// console.log(birthYear);
 
 // we can not declare empty const variables
 
-let age = 23;
+// let age = 23;
+// age = 25;
 
-age = 25;
+/*
+when we need to mutate a variable, that's the perfect use case for using let
+*/
 
-console.log(age);
+// console.log(age);
 
 //-------------------------------------
 
-var myFirstJob = "Programmer";
+// var myFirstJob = "Programmer";
 
-myFirstJob = "Teacher";
+// myFirstJob = "Teacher";
 
-console.log(myFirstJob);
-*/
+// console.log(myFirstJob);
+
 /* 
-Now, although it looks like var and let are very similar, below the surface they are actually pretty different. For now just remember let is block-scoped and var is funtion scoped.
+Now, although it looks like var and let are very similar, below the surface they are actually pretty different. For now just remember let is block-scoped and var is funtion scoped. For now, what matters is that you should basically never use var.
 */
 
-/* Basic Operator */
+/////////////////////////////////
+////// 009 Basic Operators //////
+/////////////////////////////////
 
 /*
+// Math Operators
 const now = 2023;
-
 const ageJonas = now - 1991;
 const ageSarah = now - 1980;
 
@@ -91,7 +136,6 @@ const lastName = "Sushmoy";
 console.log(firstName + " " + lastName);
 
 // Assignment Operators
-
 let x = 10 + 5;
 x += 10; // x = x + 10 = 25
 x *= 4; // x = x * 4 = 100
@@ -113,6 +157,10 @@ console.log(isFullAge);
 console.log(now - 1991 > now - 1980);
 */
 
+//////////////////////////////////////
+////// 010 Operators Precedence //////
+//////////////////////////////////////
+
 /*
 const now = 2023;
 
@@ -123,15 +171,17 @@ console.log(now - 1991 > now - 1980);
 
 let x, y;
 
-x = y = 25 - 10 - 5; // x = y = 10 this means right-to-left. So, x = 10 then both 10.
+x = y = 25 - 10 - 5; 
 
-console.log(x, y);
+console.log(x, y); // Output: 10 10 | x = y = 10 this means right-to-left. So, y = 10 then both 10.
 
 const averageAge = (ageJonas + ageSarah) / 2;
 
 console.log(ageJonas, ageSarah, averageAge);
 */
-
+///////////////////////////////////////////////
+////// 012 Strings and Template Literals //////
+///////////////////////////////////////////////
 /* 
 const firstName = "jonas";
 const job = "Teacher";
@@ -149,10 +199,37 @@ multiline
 string`);
 */
 
-/*Type Conversion and Type Coercion*/
+///////////////////////////////////////////////////
+///// 013 Taking Decisions_if_else Statements /////
+///////////////////////////////////////////////////
 
 /*
+// Example:
+const age = 15;
 
+if (age >= 18) {
+  console.log("Sarah can have a driving license");
+} else {
+  const yearsLeft = 18 - age;
+  console.log(`Sarah is too young. Wait another ${yearsLeft} years :)`);
+}
+
+// Example:
+let birthYear = 1998;
+let century;
+
+if (birthYear <= 2000) {
+  century = 20;
+} else {
+  century = 21;
+}
+console.log(century);
+*/
+///////////////////////////////////////////////////
+////// 015 Type Conversion and Type Coercion //////
+///////////////////////////////////////////////////
+/*
+// type Conversion ->
 // In Type conversion we do it manually (Explicitley). Means we manually convert from one type to another.
 
 const inputYear = "1991";
@@ -161,8 +238,9 @@ const testVar = "October";
 console.log(inputYear + 10); // 199110 in string
 console.log(Number(inputYear) + 10); // 2001 in number
 console.log(String(inputYear2)); //1992 in string
-console.log(Number(testVar)); // Nan (Invalid number)
+console.log(Number(testVar)); // Nan (Not a number or Invalid number)
 
+// Type Coercion ->
 // In Type coercion it happens automatically
 console.log("I'm " + 23 + " years old");
 // In JavaScript, the plus '+' operator that we used here triggers a coercion to strings automatically.
@@ -182,7 +260,9 @@ console.log("23" / "2");
 console.log(Number("Sushmoy")); // Output: NaN
 */
 
-/* Lecture: 18 | Truthy & Falsy values */
+///////////////////////////////////////
+////// 016 Truthy & Falsy values //////
+///////////////////////////////////////
 
 //Falsy values are values that are not exactly false but will become false when we try to convert them into a boolean.
 
@@ -192,7 +272,7 @@ console.log(Number("Sushmoy")); // Output: NaN
 
 // On the contrary, Everything else are our so-called truthy values meaning values that will be converted to true.
 
-//For example: Any number that is not zero, any string that is not an empty string or any empty object will be converted to true when we try to convert them into boolen.
+//For example: Any number that is not zero, any string that is not an empty string or any empty object will be converted to true when we try to convert them into a boolen.
 /*
 console.log(Boolean(0)); // false
 console.log(Boolean(undefined)); // false
@@ -202,7 +282,9 @@ console.log(Boolean(" ")); // false
 */
 // In practice the conversion to boolean is always implicit, not explicit or in other words is always typed coercion that JavaScript does automatically behind the scenes.
 
-// Well, it heppens in two scenarios. First when using logical operators, and second in a logical context. for example: in the condition of a conditional if-else statement.
+// But when exactly does JavaScript do type coercion to booleans?
+// --> Well, it heppens in two scenarios. First when using logical operators, and second in a logical context. for example: in the condition of a conditional if-else statement.
+
 /*
 const money = 0;
 
@@ -239,7 +321,9 @@ if (height) {
 */
 // here height is zero means defined but according to the truthy and falsy rule else block is executed. this bug can be solved using logical operators.
 
-/*Lecture: 17 | Equality Operators == vs ===*/
+//////////////////////////////////////////////
+////// 017 Equality Operators == vs === //////
+//////////////////////////////////////////////
 
 // === is a comparison operator
 
@@ -290,7 +374,9 @@ if (favorite !== 23) {
 }
 */
 
-/*Logical Operator*/
+/////////////////////////////////
+////// 019Logical Operator //////
+/////////////////////////////////
 
 /*
 const hasDriverLicense = true;
@@ -322,35 +408,39 @@ if (hasDriverLicense && hasGoodVision && !isTired) {
   console.log("Someone else should drive");
 }
 */
-
-/*Diffrence between Switch Statement and If-else statement*/
+///////////////////////////////////////
+////// 021 The Switch Statement  //////
+///////////////////////////////////////
 
 /*
 let day = "wednesday";
 
 switch (day) {
-  case "monday":
+  case "monday": // this means, day === 'monday'
     console.log("write code templates");
     break;
-  case "friday":
+  case "tuesday":
     console.log("record videos");
+    break;
+// N.B: we can do a nice little trick, which is to run the same code for two different values. all we have to do is specify this case and then we can specify another case right after it.
+
+// so whatever we write here will then be executed for both Wednesday and Thursday.
+  case "wednesday": 
+  case "thursday":
+    console.log("write code examples");
+    break;
+  case "friday":
+    console.log("prepare theory videos");
     break;
   case "satureday":
   case "sunday":
     console.log("Enjoy the weekend");
-    break;
-  case "tuesday":
-    console.log("prepare theory videos");
-    break;
-  case "wednesday":
-  case "thursday":
-    console.log("write code examples");
-    break;
+    break;  
   default:
     console.log("not a valid day");
 }
 
-// Switch statement was meant for checking eqality and if-else statement is for comparing and stuff.
+// Switch statement was meant for checking eqality and if-else statement is for comparing stuff.
 
 // the same example in if-else statement
 day = "sunday";
@@ -369,7 +459,9 @@ if (day === "monday") {
 }
 */
 
-/*Statement and Expressions */
+///////////////////////////////////////////
+////// 022 Statement and Expressions //////
+///////////////////////////////////////////
 
 /*
 3 + 4; // it is an expression
@@ -397,7 +489,9 @@ My younger brothers age is ${2023 - 2000}. So, he is ${
 // Inside Template literals ${} here JavaScript expects an expression not any statements.
 */
 
-/* The Conditional(Ternary) Operator */
+///////////////////////////////////////////////
+////// The Conditional(Ternary) Operator //////
+///////////////////////////////////////////////
 
 /*
 const age = 23;

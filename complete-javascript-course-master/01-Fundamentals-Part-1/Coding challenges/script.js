@@ -1,5 +1,23 @@
 /* Coding Challenge 01 */
 
+//// 2nd Attempt [20-07-2023] ////
+
+// const markHeight = 1.69;
+// const markWeight = 78;
+
+// let markBMI = markWeight / markHeight ** 2;
+
+// const johnHeight = 1.95;
+// const johnWeight = 92;
+
+// let johnBMI = johnWeight / johnHeight ** 2;
+
+// const markHigherBMI = markBMI > johnBMI;
+
+// console.log(markHigherBMI);
+
+//// 1st Attempt ////
+
 // const massMark = 78;
 // const massJohn = 92;
 
@@ -13,6 +31,25 @@
 // console.log(markBmi, johnBmi, markHigherBMI);
 
 /* Coding Challenge 02 */
+
+//// 2nd Attempt [20-07-2023] ////
+
+// const markHeight = 1.69;
+// const markWeight = 78;
+// const johnWeight = 92;
+// const johnHeight = 1.95;
+
+// let markBMI = markWeight / markHeight ** 2;
+// let johnBMI = johnWeight / johnHeight ** 2;
+// const markHigherBMI = markBMI > johnBMI;
+
+// if (markHigherBMI) {
+//   console.log(`Mark's BMI (${markBMI}) is higher than John's (${johnBMI})!`);
+// } else {
+//   console.log(`John's BMI (${johnBMI}) is higher than Mark's (${markBMI})!`);
+// }
+
+//// 1st Attempt ////
 
 // const massMark = 78;
 // const massJohn = 92;
@@ -31,7 +68,27 @@
 
 /* Coding Challenge 03 */
 
-// Bonus 2 [done] and did add a little bit extra porgramm
+//// 2nd Attempt [21-07-2023] ////
+
+// const avgScoreDolphins = (97 + 112 + 101) / 3;
+// const avgScoreKoalas = (109 + 95 + 106) / 3;
+
+// if (avgScoreDolphins > avgScoreKoalas && avgScoreDolphins >= 100) {
+//   console.log("Dolphins wins the competition 🏆");
+// } else if (avgScoreKoalas > avgScoreDolphins && avgScoreKoalas >= 100) {
+//   console.log("Koalas wins the competition 🏆");
+// } else if (
+//   avgScoreDolphins === avgScoreKoalas &&
+//   avgScoreDolphins >= 100 &&
+//   avgScoreKoalas >= 100
+// ) {
+//   console.log("It is a draw");
+// } else {
+//   console.log("None of the team has scroed a average of 100 yet");
+// }
+// console.log(avgScoreDolphins, avgScoreKoalas);
+
+//// 1st Attempt ////
 
 // const avgScoreDolphins = (97 + 112 + 81) / 3;
 // const avgScoreKoalas = (109 + 95 + 85) / 3;
@@ -60,7 +117,24 @@
 
 /* Coding Challenge 04 */
 
-// My Solution and it works too
+//// 2nd Attempt [21-07-2023] ////
+/*
+const bill = 40;
+
+const tip1 = bill * (15 / 100);
+const tip2 = bill * (20 / 100);
+
+const finalBill1 = bill + tip1;
+const finalBill2 = bill + tip2;
+
+console.log(
+  `The bill was ${bill}, the tip was ${
+    bill >= 50 && bill <= 300 ? tip1 : tip2
+  }, and the total value ${bill >= 50 && bill <= 300 ? finalBill1 : finalBill2}`
+);
+*/
+
+//// 1st Attempt ////
 /*
 const bill = 275;
 
