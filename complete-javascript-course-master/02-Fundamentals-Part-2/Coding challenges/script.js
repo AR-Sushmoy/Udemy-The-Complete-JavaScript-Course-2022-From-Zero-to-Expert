@@ -2,6 +2,28 @@
 
 //////////// Coding Challenge 01 ///////////////
 
+////// 2nd Attempt [22-07-23] //////
+/*
+const clacAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
+
+const avgScoreDolphins = clacAverage(85, 54, 41);
+const avgScoreKoalas = clacAverage(24, 34, 27);
+console.log(avgScoreDolphins, avgScoreKoalas);
+
+const checkWinner = function (avgDolphins, avgKoalas) {
+  if (avgDolphins >= 2 * avgKoalas) {
+    console.log(`Dolphins win (${avgDolphins} vs. ${avgKoalas})`);
+  } else if (avgKoalas >= 2 * avgDolphins) {
+    console.log(`Koalas win (${avgKoalas} vs. ${avgDolphins})`);
+  } else {
+    console.log("No Team wins the game yet");
+  }
+};
+
+checkWinner(avgScoreDolphins, avgScoreKoalas);
+*/
+
+////// 1st Attempt //////
 /*
 const calcAvgerage = (scoreOne, scoreTwo, scoreThree) =>
   (scoreOne + scoreTwo + scoreThree) / 3;
@@ -35,6 +57,26 @@ checkWinner(avgScoreDolphins, avgScoreKoalas);
 
 //////////// Coding Challenge 02 ///////////////
 
+////// 2nd Attempt [23-07-23] //////
+/*
+const calcTip = function (bill) {
+  const tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+  return tip;
+};
+
+const bills = [125, 555, 44];
+
+const tips = [
+  calcTip(bills[0]),
+  calcTip(bills[1]),
+  calcTip(bills[bills.length - 1]),
+];
+
+const total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
+
+console.log(tips, total);
+*/
+////// 1st Attempt //////
 /*
 const calcTip = function (bill) {
   // if (bill >= 50 && bill <= 300) {
@@ -62,6 +104,44 @@ console.log(totals);
 
 //////////// Coding Challenge 03 ///////////////
 
+////// 2nd Attempt [23-07-23] //////
+/*
+const mark = {
+  firstName: "Mark",
+  lastName: "Miller",
+  mass: 78,
+  height: 1.69,
+  calcBMI: function () {
+    this.bmi = this.mass / this.height ** 2;
+    return this.bmi;
+  },
+};
+
+const john = {
+  firstName: "John",
+  lastName: "Smith",
+  mass: 92,
+  height: 1.95,
+  calcBMI: function () {
+    this.bmi = this.mass / this.height ** 2;
+    return this.bmi;
+  },
+};
+
+mark.calcBMI();
+john.calcBMI();
+console.log(john.bmi, mark.bmi);
+
+mark.bmi < john.bmi
+  ? console.log(
+      `${john["firstName"]}'s BMI (${john.bmi}) is higher than ${mark["firstName"]}'s (${mark.bmi})`
+    )
+  : console.log(
+      `${mark["firstName"]}'s BMI (${mark.bmi}) is higher than ${john["firstName"]}'s (${john.bmi})`
+    );
+*/
+
+////// 1st Attempt //////
 /*
 const mark = {
   fullName: "Mark Miller",
@@ -100,6 +180,41 @@ mark.bmi > john.bmi
 */
 
 //////////// Coding Challenge 04 ///////////////
+
+////// 2nd Attempt [24-07-23] //////
+
+/*
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+
+const tips = [];
+const totals = [];
+
+const calcTip = function (bill) {
+  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+};
+
+for (let i = 0; i < bills.length; i++) {
+  tips.push(calcTip(bills[i]));
+  totals.push(tips[i] + bills[i]);
+}
+
+console.log(tips, totals);
+
+// Bonus Part Solution
+const calcAverage = function (arr) {
+  let sum = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return sum / arr.length;
+};
+
+console.log(calcAverage(totals));
+console.log(calcAverage([2, 2, 2]));
+*/
+
+////// 1st Attempt //////
 /*
 // Tip Calculator Function
 const calcTip = (bills) =>

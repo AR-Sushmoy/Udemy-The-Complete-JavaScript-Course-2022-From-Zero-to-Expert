@@ -1,10 +1,22 @@
 "use strict";
 
-///////////////////////////////////////
-// Activating Strict Mode
+////////////////////////////////////////
+////// 002 Activating Strict Mode //////
+////////////////////////////////////////
+
 // strict mode helps our code from producing any bugs. Basically, it warns us in the console if something is wrong inside our code. So, it is recommended to always activate strict mode at the first line.
 
-//////////////////// Functions ////////////////////
+// Strict mode has to be the very first statement in the script. So if we have any code before this then strict mode will not be activated. Comments are allowed because JavaScript will just ignore them but no code.
+
+///////////////////////////
+////// 003 Functions //////
+///////////////////////////
+
+// The fundamental building block of real world JavaScript applications are functions. They are one of the most essential concepts in the language
+
+// what actually are functions?
+// --> Well in the most simple form a function is simply a piece of code that we can reuse over and over again in our code.
+
 /*
 function printing() {
   console.log("JavaScript is fun");
@@ -14,7 +26,8 @@ printing();
 printing();
 printing();
 
-// we just reuse a piece of code thrice
+// we just reused a piece of code thrice
+
 // So, a function cannot only reuse a piece of code but it can also receive data and return data back. Basically, function is like a machine.
 
 // Prameters are like variables that are specifice only to this function and they will get defined once the function is called. Parameters represent the input data of this function.
@@ -31,11 +44,14 @@ const appleJuice = fruitProcessor(3, 4);
 console.log(appleJuice); // This is another way ofshowing the result on the console
 */
 
-/// Function Declaration vs Function Expression ///
+/////////////////////////////////////////////////
+//// 004 Function Declaration vs Expressions ////
+/////////////////////////////////////////////////
 
-// Function Declaration //
+////// Function Declaration //////
 
 // The input in our funtion it's just a parameter. And, the parameter it's a bit like a local variable that's only available inside of this function.
+
 // For example:
 
 // function calcAge1(birthYear) {
@@ -59,14 +75,14 @@ console.log(appleJuice); // This is another way ofshowing the result on the cons
 
 // calcAge1(2000);
 
-// This will now create a value and the vlaue that this will create is the value that's return from the calcAge function.
+// This will now create a value and the vlaue that this will create is the value that will return from the calcAge function.
 
 // And so, we need to capture or to save that value into a variable
 
 // const age1 = calcAge1(2000);
 // console.log(age1); // Output: 23
 
-// Function Expression //
+////// Function Expression //////
 
 // const calcAge2 = function (birthYear) {
 //   return 2023 - birthYear;
@@ -76,6 +92,8 @@ console.log(appleJuice); // This is another way ofshowing the result on the cons
 // console.log(age2); // Same output as before
 
 // This indicates that in both way we can write a function in JavaScript.
+
+// In JavaScript, functions are actually just values. So if it's a value, we can store it in a variable.
 
 ///Difference between Function Declaration vs. Expression///
 
@@ -89,6 +107,8 @@ function calcAge1(birthYear) {
 }
 
 // As you can see we can call a function before they are defined. If it is written as function declaration.
+
+// on the otherhand,
 
 const calcAge2 = function (birthYear) {
   return 2023 - birthYear;
@@ -105,7 +125,9 @@ console.log(age1, age2); // Output: 23 23
 
 // Internally this happens because of a process called Hoisting.
 
-///////////////// Arrow Functions /////////////////
+/////////////////////////////////////
+//////// 005 Arrow Functions ////////
+/////////////////////////////////////
 
 // An Arrow function is simply a special form of function expression that is shorter therefore faster to write.
 
@@ -158,7 +180,9 @@ console.log(yearsUntilRetirement(2000, "Sushmoy"));
 console.log(yearsUntilRetirement(1989, "Sabbir"));
 */
 
-/////// Functions calling another functions ///////
+/////////////////////////////////////////////////
+//// 006 Functions calling another functions ////
+/////////////////////////////////////////////////
 
 /*
 function cutFruitPieces(fruit) {
@@ -178,7 +202,9 @@ console.log(fruitProcessor(3, 2));
 
 // This is one silly example of Function calling another Function.
 
-/////////////// Reviewing functions ////////////////
+/////////////////////////////////////////////////
+//////////// 007 Reviewing functions ////////////
+/////////////////////////////////////////////////
 
 /*
 const calcAge = function (birthYear) {
@@ -283,7 +309,9 @@ console.log(yearsUntilRetirement(1950, "Bob"));
 
 // So, basically we use functions to reuse pieces of code.
 
-///////////// Introduction to Arrays //////////////
+////////////////////////////////////////////////
+////////// 009 Introduction to Arrays //////////
+////////////////////////////////////////////////
 
 // let's say we want to represent 10 friends and then we would have to create 10 variables which is not efficient.
 
@@ -390,13 +418,15 @@ const age = [
 console.log(age);
 */
 
-///////// Basic Array Operations (Methods) /////////
+////////////////////////////////////////////////
+///// 010 Basic Array Operations (Methods) /////
+////////////////////////////////////////////////
 
 // JavaScript has some built in functions that we can apply directly on Arrays. And these are called Methods. We can think of these methods as Array operations.
 
 // There are countless Array Methods in JavaScript. Let's learn about some of them,
 
-//////// ADD Elements:
+//////// ADD Elements: ////////
 /*
 const friends = ["Mike", "Sarah", "Jhon"];
 // The Push() Method adds elements to the end of an Array.
@@ -415,7 +445,7 @@ console.log(friends);
 
 // And just like the push() method the unshift() method also returns the length of the array.
 
-///////// REMOVE Elements:
+///////// REMOVE Elements: ////////
 
 // Next up we also have a method to remove elements from Arrays. That is pop(); method.
 
@@ -457,7 +487,9 @@ console.log(gpuCompanies.includes(24)); // true
 if (gpuCompanies.includes("Zotac")) console.log("You have a Zotac GPU!");
 */
 
-///////////// Introduction to Objects //////////////
+////////////////////////////////////////////////
+///////// 012 Introduction to Objects //////////
+////////////////////////////////////////////////
 
 // Just to Recap an Array is a data stucture to store multiple related values in the same variable. //
 
@@ -496,8 +528,9 @@ const _firstObject = {
 
 // Now, the big difference between object and array is that in Objects, the order of these values does not matter at all when we want to retrieve them.
 
-//////////////////////
-////// Dot vs. Bracket Notation(How to retrieve data from objects) ////////////
+/////////////////////////////////////////////////
+//// 013 Dot vs. Bracket Notation(How to retrieve data from objects) ////
+/////////////////////////////////////////////////
 
 // Now, we are going learn how to change data in objects, how to retrieve data from objects usign both the dot and the bracket notation.
 /*
@@ -567,7 +600,9 @@ console.log(
 );
 */
 
-////////////////// Object Methods /////////////////
+////////////////////////////////////////////////
+////////////// 014 Object Methods //////////////
+////////////////////////////////////////////////
 
 // functions are really just another type of value. And if a function is just a value then that means that we can create a key value pair in which the value is a function.And that then means that we can in fact, add functions to Objects.
 /*
@@ -595,7 +630,7 @@ console.log(sushmoy["clacAge"](2000));
 
 // So, writing the same number in the argument is not ideal, because we are not keeping the code dry. So, we're violating the don't repeat yourself principle.
 
-// So if we know the birth year of Jonas, it would only be written in one place, not in multiple places, because if that might change, then we have to change it everywhere. Again which is not ideal.
+// So if we know the birth year of sushmoy, it would only be written in one place, not in multiple places, because if that might change, then we have to change it everywhere. Again which is not ideal.
 
 // What if we could access this birth year property directly from the Sushmoy object instead of having to pass it in?
 
@@ -646,11 +681,33 @@ console.log(sushmoy["age"]);
 console.log(sushmoy.age);
 */
 
-// Challenge
+////////////////// Challenge //////////////////
 // Make a method inside the object that says,
 // "Sushmoy is a 23 years old software developer, and has a drivers license" OR "Sushmoy is a 23 years old software developer, and has no drivers license"
 
-// My Solution:
+////// 2nd Attempt [23-07-23] //////
+/*
+const sushmoy = {
+  firstName: "Md. Abu Rayhan",
+  lastName: "Sushmoy",
+  job: "Software developer",
+  birthYear: 2000,
+  hasDriversLicense: false,
+  calcAge: function () {
+    this.age = 2023 - this.birthYear;
+    return this.age;
+  },
+  getSummery: function () {
+    return `${this.lastName} is a ${this.calcAge()} years old ${
+      this.job
+    }, and has ${this.hasDriversLicense ? "a" : "no"} drivers license`;
+  },
+};
+
+console.log(sushmoy["getSummery"]());
+*/
+
+////// 1st Attempt //////
 /*
 const sushmoy = {
   firstName: "Abu Rayhan",
@@ -699,7 +756,9 @@ const sushmoy = {
 console.log(sushmoy.getSummery());
 */
 
-/////////// Iteration_The for Loop //////////////
+////////////////////////////////////////////////
+///////// 016 Iteration_The for Loop ///////////
+////////////////////////////////////////////////
 
 // loop is one of the other control structures like if else statement.
 
@@ -727,7 +786,9 @@ for (let rep = 1; rep <= 10; rep++) {
 }
 */
 
-////// Looping Arrays, Breaking and Counting ///////
+/////////////////////////////////////////////////
+/// 017 Looping Arrays, Breaking and Counting ///
+/////////////////////////////////////////////////
 
 // How to read array elements using the for loop :
 /*
@@ -795,7 +856,9 @@ for (let i = 0; i < arr.length; i++) {
 }
 */
 
-//////// Looping Backwards and Nested Loop /////////
+////////////////////////////////////////////////
+//// 018 Looping Backwards and Nested Loop /////
+////////////////////////////////////////////////
 
 // Previously, we have looped from the beginning. However, this time we'll try something different.
 
@@ -819,7 +882,7 @@ for (let i = sara.length - 1; i >= 0; i--) {
 // Let's now program a exercise on Nested Loop
 /*
 for (let exercise = 1; exercise < 4; exercise++) {
-  console.log(`        ---- Starting exercise ${exercise} ----`);
+  console.log(`---- Starting exercise ${exercise} ----`);
   for (let rep = 1; rep < 6; rep++) {
     console.log(`Exercise - ${exercise}: lifting weight repetation ${rep} 🏋🏻‍♂️`);
   }
@@ -843,7 +906,10 @@ for (let i = 0; i < arr.length; i++) {
 
 console.log(multiply);
 */
-////////////////// The While Loop //////////////////
+
+////////////////////////////////////////////////
+////////////// 019 The While Loop //////////////
+////////////////////////////////////////////////
 
 // Inside a while loop we can only pass a conditon and that's it. for example:
 /*
