@@ -1,11 +1,21 @@
 // Remember, we're gonna use strict mode in all scripts now!
 'use strict';
 
+/////////////////////////////////////////////////
+// 004 Installing Node.js and Setting Up a Dev Environment //
+/////////////////////////////////////////////////
+
 // Node.js is a way of running JavaScript outside of the browser but also it's a way of running development tools just like the live server.
 
 // npm is the Node package manager, which is a program to download tools.
 
-////////// Using Google, StackOverflow and MDN //////////
+// write this command in cdm to install live-server
+// npm install live-server -g
+
+/////////////////////////////////////////////////
+//// 007 Using Google, StackOverflow and MDN ////
+/////////////////////////////////////////////////
+
 // PROBLEM 1:
 // We work for a company building a smart home thermometer. Our most recent task is this: "Given an array of temperatures of one day, calculate the temperature amplitude. Keep in mind that sometimes there might be a sensor error."
 /*
@@ -98,7 +108,9 @@ const calcAmplitudeNew = function (t1, t2) {
 console.log(calcAmplitudeNew([2, 43, 21, 4], [23, 22, 20, 45]));
 */
 
-////// Debugging with the Console and Breakpoints //////
+/////////////////////////////////////////////////
+// 009 Debugging with the Console and Breakpoints //
+/////////////////////////////////////////////////
 
 // Let's fix a very simple bug, using the console.
 
