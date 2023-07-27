@@ -1,6 +1,8 @@
 'use strict';
 
-/////////// 003 Project #1_Guess My Number! ///////////
+/////////////////////////////////////////////////
+//////// 003 Project #1_Guess My Number! ////////
+/////////////////////////////////////////////////
 
 // how to select an element in javaScript
 //console.log(document.querySelector('.message').textContent);
@@ -12,7 +14,9 @@
 
 // So, this is how to establish this connection between our code and the user interface. So in other words, the HTML document that's being displayed in the browser.
 
-/////////// What's the DOM and DOM Manipulation ////////////
+/////////////////////////////////////////////////
+//// 004 What's the DOM and DOM Manipulation ////
+/////////////////////////////////////////////////
 
 // DOM Manipulation is the technical term for JavaScript interacting with a webpage.
 
@@ -24,7 +28,10 @@
 
 // In this tree, each HTML element is one object.
 
-//////////// Selecting and Manipulating Elements ////////////
+/////////////////////////////////////////////////
+//// 005 Selecting and Manipulating Elements ////
+/////////////////////////////////////////////////
+
 /*
 document.querySelector('.message').textContent = '🎉Correct Number!';
 console.log(document.querySelector('.message').textContent);
@@ -35,7 +42,10 @@ document.querySelector('.score').textContent = 19;
 document.querySelector('.guess').value = 24;
 console.log(document.querySelector('.guess').value);
 */
-///////////////// Handling Click Events ///////////////////
+
+/////////////////////////////////////////////////
+/////////// 006 Handling Click Events ///////////
+/////////////////////////////////////////////////
 
 // Let's now make our application do something  when we click on the Check button.
 
@@ -58,13 +68,17 @@ document.querySelector('.check').addEventListener('click', function () {
 
 // Simple Explanation: In the condition, if there is no guess then just  print to the message element that there is no number.
 */
-///////////////// Implementing the Game Logic ///////////////////
+
+/////////////////////////////////////////////////
+//////// 007 Implementing the Game Logic ////////
+/////////////////////////////////////////////////
+
 /*
 // Our Secret number.
 const secretNumber = Math.trunc(Math.random() * 20) + 1;
 document.querySelector('.number').textContent = secretNumber;
 
-let score = 20;
+let score = 10;
 document.querySelector('.check').addEventListener('click', function () {
   const guess = Number(document.querySelector('.guess').value);
 
@@ -78,7 +92,7 @@ document.querySelector('.check').addEventListener('click', function () {
       score--;
       document.querySelector('.score').textContent = score;
     } else {
-      document.querySelector('.message').textContent = '💥 You lost the game!';
+      document.querySelector('.message').textContent = '💥 Game Over!';
       document.querySelector('.score').textContent = 0;
     }
   } else if (guess < secretNumber) {
@@ -87,14 +101,17 @@ document.querySelector('.check').addEventListener('click', function () {
       score--;
       document.querySelector('.score').textContent = score;
     } else {
-      document.querySelector('.message').textContent = '💥 You lost the game!';
+      document.querySelector('.message').textContent = '💥 Game Over!';
       document.querySelector('.score').textContent = 0;
+      console.log(score);
     }
   }
 });
 */
 
-///////////////// Manipulating CSS Styles ///////////////////
+/////////////////////////////////////////////////
+///////// 008 Manipulating CSS Styles ///////////
+/////////////////////////////////////////////////
 
 /*
 // Our Secret number.
@@ -114,7 +131,8 @@ document.querySelector('.check').addEventListener('click', function () {
   // When we figure out the correct number
   else if (guess === secretNumber) {
     document.querySelector('.message').textContent = '🎉 Correct Number';
-    // Manipulating with CSS (inline)
+    
+    /// Manipulating with CSS (inline) ///
     document.querySelector('body').style.backgroundColor = '#60b347';
     document.querySelector('.number').style.width = '30rem';
   }
@@ -147,8 +165,11 @@ document.querySelector('.check').addEventListener('click', function () {
 });
 */
 
+// The most important thing to remember --->
+// To use the Style property we specify the CSS property. And we need to specify that property in the Camel case notation in case there is two words. Then the value always needs to be a string. So that's all you need to know in order to change Styles.
+
 ///////////////////////////////////////
-// Coding Challenge #1
+// 009 Coding Challenge #1
 
 /* 
 Implement a game rest functionality, so that the player can make a new guess! Here is how:
@@ -243,14 +264,20 @@ document.querySelector('.again').addEventListener('click', function () {
 
 });
 */
-///////////// Implementing Highscores ///////////////
 
-// In line 188
+/////////////////////////////////////////////////
+///////// 010 Implementing Highscores ///////////
+/////////////////////////////////////////////////
 
-///////// Refactoring Our Code_The DRY Principle //////////
+// Check the else if (guess === secretNumber) block for the answer. 😊
+
+////////////////////////////////////////////////
+// 011 Refactoring Our Code_The DRY Principle //
+////////////////////////////////////////////////
 
 // We do refactoring to improve the code and to eliminate duplicate code
 
+/*
 // Our Secret number generator code
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 10;
@@ -317,3 +344,4 @@ document.querySelector('.again').addEventListener('click', function () {
   document.querySelector('body').style.backgroundColor = '#222222';
   document.querySelector('.number').style.width = '15rem';
 });
+*/

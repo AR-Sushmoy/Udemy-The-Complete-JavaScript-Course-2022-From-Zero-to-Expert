@@ -171,10 +171,10 @@ btnHold.addEventListener('click', function () {
     document.getElementById(`score--${activePlayer}`).textContent =
       scores[activePlayer];
 
-    // 2. check is player's score is greater or equal than 100
+    // 2. check if player's score is greater or equal than 100
     // Finish the game
     if (scores[activePlayer] >= 30) {
-      playing = false; // Okay, now this in itself will,  of course not yet do anything. So we only defined whether the game is playing or not, but none of our code is reacting to that. So remember that we only want to be able to click on these buttons once we are playing. And so let's define that At Line: 136 with a condition.
+      playing = false; // Okay, now this in itself will,  of course not yet do anything. So we only defined whether the game is playing or not, but none of our code is reacting to that. So remember that we only want to be able to click on these buttons once we are playing. And so let's define that At Line: 166 with a condition.
       diceEl.classList.add('hidden');
       document
         .querySelector(`.player--${activePlayer}`)

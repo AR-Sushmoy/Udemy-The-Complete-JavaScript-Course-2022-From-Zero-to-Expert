@@ -89,7 +89,7 @@ overlay.addEventListener('click', closeModal);
 
 //But that's not what we want to happen. We want the closeModal function to be executed only as soon as the click event happens on the closeModal button.
 
-// In Line: 81 & 83, That's so much better than what we had before. Not only did we make our code more DRY. But we also made it more readable. More expressive, and more declarative. So right now, when we read this code here, it's a lot easier to understand.
+// In Line: 84 & 86, That's so much better than what we had before. Not only did we make our code more DRY. But we also made it more readable. More expressive, and more declarative. So right now, when we read this code here, it's a lot easier to understand.
 
 //////////////////////////////////////////
 ///////// Handling an _Esc_ Keypress Event
@@ -189,42 +189,25 @@ const overlay = document.querySelector('.overlay');
 const btnShowModal = document.querySelectorAll('.show-modal');
 const btnCloseModal = document.querySelector('.close-modal');
 
-for (let i = 0; i < btnShowModal.length; i++) {
-  btnShowModal[i].addEventListener('click', function () {
-    // modal.classList.remove('hidden');
-    // overlay.classList.remove('hidden');
-    openModalAndOverlay();
-  });
-}
+const closeModalAndOverlay = function () {
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
+};
 
-btnCloseModal.addEventListener('click', function () {
-  // modal.classList.add('hidden');
-  // overlay.classList.add('hidden');
-  closeModalAndOverlay();
-});
+const openModalAndOverlay = function () {
+  modal.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+};
 
-overlay.addEventListener('click', function () {
-  // modal.classList.add('hidden');
-  // overlay.classList.add('hidden');
-  closeModalAndOverlay();
-});
+for (let i = 0; i < btnShowModal.length; i++)
+  btnShowModal[i].addEventListener('click', openModalAndOverlay);
+
+btnCloseModal.addEventListener('click', closeModalAndOverlay);
+
+overlay.addEventListener('click', closeModalAndOverlay);
 
 document.addEventListener('keydown', function (e) {
   if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-    // modal.classList.add('hidden');
-    // overlay.classList.add('hidden');
     closeModalAndOverlay();
   }
 });
-
-// above here in our code we did not followed the DRY principle. So, Let's implement that into our program.
-
-function closeModalAndOverlay() {
-  modal.classList.add('hidden');
-  overlay.classList.add('hidden');
-}
-
-function openModalAndOverlay() {
-  modal.classList.remove('hidden');
-  overlay.classList.remove('hidden');
-}
