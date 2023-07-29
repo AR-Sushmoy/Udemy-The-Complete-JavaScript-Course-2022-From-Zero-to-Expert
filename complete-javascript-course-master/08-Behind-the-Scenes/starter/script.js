@@ -1,58 +1,105 @@
 'use strict';
 
-///////////////////////////////////////////
-////// An High-Level Overview of JavaScript
+///////////////////////////////////////////////
+////// 002 An High-Level Overview of JavaScript
 
-////// What is Multi-paradigm ?
+/*
+ ## High-Level Programming Language
+ ** Developer does NOT have to worry, everything happens automatically.
 
-// An approach and mindset of structuring code, which will direct your coding style and technique.
+ ## Garbage-collected
+ ** JavaScript has a cleaning guy who cleans the memory so we don’t have to.
 
-// 1. Procedural Programming
-// 2. Object-roiented programming (OOP)
-// 3. Functional Programming (FP)
+ ## Interpreted or just-in-time compiled
 
-// Using javaScript we can do it all.
+ ## Multi-paradigm
+ ** Paradigm: An approach and mindset of structuring code, which will direct your coding style and technique. Also we can classify paradigms as imperative or as declarative. 
+ ** There three diffrent paradigms in programming languages. These are,
+ 1. Procedural Programming (The one we've been using so far
+ 2. Object-oriented programming (OOP)
+ 3. Functional programming (FP)
+ 
+ Many languages are only procedural  or only Object-Oriented or only Functional, but JavaScript does all of it. So it's really flexible and versatile. 
+ 
+ ## Prototype-based object-oriented
+ ** So, about the object-oriented nature of JavaScript, it is a prototype-based, object-oriented approach.
+ 
+ This means, almost everything in JavaScript is an object, except for primitive values such as numbers, strings, et cetera.
+ 
+ But arrays, for example, are just object. Now, have you ever wondered why we can create an array and then use the push method or the indexOf method on it ? 
+ 
+ For Example: 
+ const arr = [1, 2, 3];
+ arr.push(4); 
+ arr.indexOf(2);           
 
-////// What is First-class functions?
+ Well, it's because of prototypal inheritance. Basically, we create arrays from an array blueprint (Class), which is like a template and this is called the prototype.
 
-// Javascript is a language with first-class functions. which simply means that functions are treated just as regular variables.
+ This prototype contains all the array methods and the arrays that we create in our code then inherit the methods from the blueprint so that we can use them on the arrays.
 
-// So, we can pass functions into other functions and we can even return functions from functions. And this is extremely powerful because it allows us to use a lot of powerful techniques and also allows for functional-programming.
+ This is actually a huge oversimplification on object-oriented programming in JavaScript.
 
-////// What is Dynamically-typed language means?
 
-// JavaScript is a dynamic language and dynamic actually means dynamically-typed. So as we've already seen, in JavaScript, we don't assign data types to variables. Instead, they only became known when the JavaScript engine executes our code. Also, the type of variables can easily be changed as we reassign variables. for example:
-let x = 23;
-x = 'Sumeer';
-// Here, data type of variable is automatically changed.
+ ## First-class functions
+ ** functions are simply treated as variables. We can pass them into other functions, and return them from functions. 
 
-// And this is basically what dynamically-typed means.
+ This is extremely powerful because it allows us to use a lot of powerful techniques and also allows for functional-programming, which is one of the paradigms. We have already used the power of first-class functions.
 
-////// what actually is a concurrency model?
+ In the Modal-window project we've used the closeModal() function into the addEventListener function as if it was just a regular variable. 
+ 
+ const closeModal = () => {
+    modal.classList.add('hidden);
+    overlay.classList.add('hidden);
+ };
 
-// Well, it's just a fancy term that means how the JavaScript engine handles multiple tasks happening at the same time.
+ overlay.addEventListener('click', closeModal);
+                                   ---------- 
 
-//// But why do we need that?
+ ## Dynamic
+ ** JavaScript is a dynamic language and dynamic actually means dynamically-typed. 
 
-// Well, because JavaScript itself runs in one single-thread, which means that it can only do one thing at a time and therefore we need a way of handling multiple things happening at the same time.
+ So as we've already seen, in JavaScript, we don't assign data types to variables. Instead, they only became known when the JavaScript engine executes our code. 
 
-// And by the way, in computing, a thread is like a set of instructions that is executed in the computer's CPU.
+ Also, the type of variables can easily be changed as we reassign variables. And this is basically what dynamically-typed means.
 
-// So basically, the thread is where our code is actually executed in a machine's processor.
+ For Example: 
+ let x = 23; [No data type definitions. Types
+ becomes known at runtime]
+ let y = 17; 
 
-//// What about a long-runnig task, like fetching data from a remote server?
+ x = 'Sushmoy; [Data type of variable is
+ automatically changed]
 
-// Well, it sounds like that would block the single thread where the code is running, right? But of course we don't want that. What we want is so-called non-blocking behavior.
+ ## Non-blocking event loop Concurrency model
 
-//// how do we achieve that?
+ ** What actually is a concurrency model?
 
-// by using a so-called event loop. The event loop takes long-running tasks, executes them in the background and then puts them back in the main thread once they are finished.
+ Well, it's just a fancy term that means how the JavaScript engine handles multiple tasks happening at the same time.
 
-// And this is, in a nutshell, JavaScript's non-blocking event loop concurrency model with a single thread.
+ ** But why do we need that?
 
-/////////////////////////////////////////////
-///////// The JavaScript Engine and Runtime
+ ## Single-threaded
 
+ ** Well, because JavaScript itself runs in one single-thread, which means that it can only do one thing at a time and therefore we need a way of handling multiple things happening at the same time.
+
+ And by the way, in computing, a thread is like a set of instructions that is executed in the computer's CPU.
+
+ So basically, the thread is where our code is actually executed in a machine's processor.
+
+ ** What about a long-runnig task, like fetching data from a remote server?
+
+ Well, it sounds like that would block the single thread where the code is running, right? But of course we don't want that. What we want is so-called non-blocking behavior.
+
+ ** how do we achieve that?
+
+ By using a so-called event loop. The event loop takes long-running tasks, executes them in the background and then puts them back in the main thread once they are finished.
+
+ And this is, in a nutshell, JavaScript's non-blocking event loop concurrency model with a single thread.
+
+*/
+///////////////////////////////////////////////
+///////// 004 The JavaScript Engine and Runtime
+/*
 //// What is a JavaScript Engine?
 
 // a JavaScript engine is simply a computer program that executes JavaScript code. There are a lot of steps involved in doing that, but essentially executing JavaScript code is what an engine does.
@@ -65,13 +112,38 @@ x = 'Sumeer';
 
 // Anyway, it's quite easy to understand what an engine is but what's most important is to actually understand its components and how it works.
 
-// So any JavaScript engine always contains a call stack and a heap. [CHECH_OUT_IMAGE-1].
+** JavaScript engines always contains two components. These are,
+1) a call stack and 
+2) a heap. 
+[CHECH_OUT_IMAGE-01]
 
 // The call stack is where our code is actually executed using something called execution contexts.
 
-// Then the heap is an unstructured memory pool which stores all the objects that our application needs.CHECH_OUT_IMAGE-2.
+// Then the heap is an unstructured memory pool which stores all the objects that our application needs. [CHECH_OUT_IMAGE-02]
 
-//// Computer science Sideo note: But now the question is how the code is compiled to machine code so that it actually can be executed afterwards ?
+// Alright, now we know where our code is executed.
+
+// Now the question is, How the code is compiled to machine code so that it can be executed afterwards ?
+
+## First let's understand, Computer science Side Note: Compilation vs. Interpretation?
+
+** Computer's processor only understands zeros and ones. Therefore every single computer program ultimately needs to be converted into machine code. And this can happen using compilation or interpretation.
+
+** In compilation, the entire source code is converted into machine code at once. Then this machine code is written into a portable file that can be executed on any computer.
+
+So we have two different steps here,
+First, The machine code is built.
+Second, It is executed in the CPU.
+
+The execution can happen way after the compilation.
+
+For Example: Any application that you're using on your computer right now has been compiled before and you're now executing it way after it's compilation. [CHECH_OUT_IMAGE-03]
+
+** In interpretation, there is an interpreter which runs through the source code and executes it line by line. 
+
+So here we do not have the same two steps as before. Instead the code is read and executed all at the same time.
+
+Of course the source code still needs to be converted into machine code, but it simply happens right before it's executed and not ahead of time. [CHECH_OUT_IMAGE-04]
 
 // JavaScript used to be a purely interpreted language but the problem with interpreted languages is that they are much, much slower than compiled languages. This used to be okay for JavaScript, but now with modern JavaScript and fully fledged web applications that we built and use today, low performance is no longer acceptable.
 
@@ -81,11 +153,14 @@ x = 'Sumeer';
 
 // So instead of simple interpretation modern JavaScript engine now use a mix between compilation and interpretation which is called just-in-time (JIT) compilation.
 
-// This approach basically compiles the entire code into machine code at once and then executes it right away. CHECH_OUT_IMAGE-3
+// This approach basically compiles the entire code into machine code at once, then gets executed immediately. [CHECH_OUT_IMAGE-05]
 
-//// Modern Just-in-time compilation of javascript process =>
+## Modern Just-in-time compilation of javascript process --->
 
-// So as a piece of JavaScript code enters the engine the first step is to parse the code which essentially means to read the code. During the parsing process, the code is parsed into a data structure called the abstract syntax tree or (AST). This works by first splitting up each line of code into pieces that are meaningful to the language like the const or function keywords, and then saving all these pieces into the tree in a structured way. This step also checks if there are any syntax errors and the resulting tree will later be used to generate the machine code.
+** Parsing: 
+So as a piece of JavaScript code enters the engine the first step is to parse the code. Which essentially means to read the code. During the parsing process, the code is parsed into a data structure called the abstract syntax tree or (AST). This works by first splitting up each line of code into pieces that are meaningful to the language like the const or function keywords, and then saving all these pieces into the tree in a structured way. 
+
+This step also checks if there are any syntax errors and the resulting tree will later be used to generate the machine code.
 
 // And of course you don't need to know what an AST looks like.
 
@@ -93,11 +168,12 @@ x = 'Sumeer';
 
 // This machine code then gets executed right away because remember modern JavaScript engine use just-in-time compilation. And remember execution happens in the JavaScript engines call stack. We will discuss more on this topic later.
 
-// Anyways modern JavaScript engines actually have some pretty clever optimization strategies.
+## Optimization
+** Modern JavaScript engines actually have some pretty clever optimization strategies.
 
-// What actually happens is, In the beginning it creates a very unoptimized version of machine code just so that it can start executing as fast as possible.
+What actually happens is, In the beginning it creates a very unoptimized version of machine code just so that it can start executing as fast as possible.
 
-// Then in the background, this code is being optimized and recompiled during the already running program execution. And this can be done most of the times and after each optimization the unoptimized code is simply swept for the new more optimized code without ever stopping execution. And this process is what makes modern engines such as the V-Eight so fast. CHECH_OUT_IMAGE-4
+Then in the background, this code is being optimized and recompiled during the already running program execution. And this can be done most of the times and after each optimization the unoptimized code is simply swept for the new more optimized code without ever stopping execution. And this process is what makes modern engines such as the V-Eight so fast. [CHECH_OUT_IMAGE-06]
 
 // Now different engines implements in slightly different ways, but in a nutshell this is what modern just-in-time compilation looks like for JavaScript.
 
@@ -113,20 +189,38 @@ x = 'Sumeer';
 
 // So that's everything related to the DOM or timers or even the console.log that we use all the time.
 
-// So web APIs are essentially functionalities provided to the engine, but which are actually not part of the JavaScript language itself.
+// So web APIs are functionalities provided to the engine, but which are actually not part of the JavaScript language itself.
 
-// JavaScript simply gets access to these APIs through the global window object. But it still makes sense that the web APIs are also part of the runtime, because again a runtime is just like a box that contains all the JavaScript related stuff that we need.
+// JavaScript simply gets access to these APIs through the global window object. But it still makes sense that the web APIs are also part of the runtime.
 
-// Next a typical JavaScript runtime also includes a so called callback queue. This is a data structure that contains all the callback functions that are ready to be executed. For example we attach event handler functions to DOM elements like a button to react to certain events, right? And these event handler functions are also called callback functions okay. So as the event happens, for example a click, the callback function will be called.
+// Because again a runtime is just like a box that contains all the JavaScript related stuff that we need.
 
-// And To understand this section properly I would suggest to watch the video explanation. Time - 12:00 min.
+## A JavaScript runtime also includes a so called callback queue. 
 
-//// However, it's also important to remember that JavaScript can exist outside of browsers, for example, in Node.js.
+** Callback queue is a data structure that contains all the callback functions that are ready to be executed.
 
-// It's pretty similar, but since we don't have a browser of course, we can't have the web APIs. because it's the browser who provides these. Instead we have multiple C ++ bindings and a so called thread pool. In short Node.js is a different JavaScript runtime. CHECH_OUT_IMAGE-5
+For Example: 
+ we attach event handler functions to DOM elements like a button to react to certain events ('click'), right? 
+ 
+ And these event handler functions are also called callback functions okay. So as the event happens, for example a click, the callback function will be called.
 
-/////////////////////////////////////////////
-/////// Execution Contexts and The Call Stack
+// To understand how that actually workds behind the scenes properly watch the video explanation. Timestamp - 11:40 min.
+
+So the first thing that actually happens after the event is callled is that the callback function is put into the callback queue. 
+
+Then when the call stack is empty the callback function is passed to the call stack by the event loop 🔄. 
+
+Basically the event loop 🔄 takes callback functions from the callback queue and puts them in the call stack so that they can be executed.
+
+** This is an overview of how JavaScript's nonblocking concurrency model is implemented by the event loop 🔄 works. 
+
+### However, it's also important to remember that JavaScript can exist outside of browsers, for example, in Node.js.
+
+** It's pretty similar, but since we don't have a browser of course, we can't have the web APIs. because it's the browser who provides these. Instead we have multiple C ++ bindings and a so called thread pool. In short Node.js is a different JavaScript runtime. [CHECH_OUT_IMAGE-08]
+
+*/
+////////////////////////////////////////////////
+////// 005 Execution Contexts and The Call Stack
 
 // ---> It's better you watch the video to understand this topic properly.
 
@@ -147,8 +241,9 @@ x = 'Sumeer';
 // The Call Stack is the place where execution contexts get stacked on top of each other, to keep track of where we are in the execution.
 
 /////////////////////////////////////////////
-/////// Scope and the Scope Chain
+/////// 006 Scope and the Scope Chain
 
+/*
 // Second component of a execution context is Scope Chain.
 
 //// What is Scoping ?
@@ -164,19 +259,22 @@ x = 'Sumeer';
 //////// Now, What is scope itself ?
 // --> Scope is the place or space or environment in our code where variables are declared.
 
-// In the case of functions, that is the variable environment which is stored in the Functions Execution Context.
+// In the case of functions, that's essentially the **variable environment** which is stored in the Functions Execution Context.
 
 ///// what's the difference between scope and variable environment?
 // --> For the case of functions, it's basically the same.
 
 /////// What is the scope of a variable ?
-// --> So the scope of a variable is basically the entire region of our code, where a certain variable can be accessed.
+// --> So the scope of a variable is basically the entire region of our code, where this variable can be accessed.
 
 ////// The 3 types of scope:
-// --> In JavaSciprt there is Global Scope, Function Scope and Block Scope(ES6).
+// --> In JavaSciprt there is,
+ 1) Global Scope, 
+ 2) Function Scope and 
+ 3) Block Scope(ES6).
 
-// As we already know Scope is the place in our code where variables are declared. And when i say variables, the exact thing is true for functions as well.
-// Because, in the end, functions are just values that are stored in variables.
+As we already know Scope is the place in our code where variables are declared. And when i say variables, the exact thing is true for functions as well.
+Because, in the end, functions are just values that are stored in variables.
 
 /////// 1st [GLOBAL SCOPE]: the global scope is for top level code. Meaning this is for variables that are declared outside of any function or block.
 
@@ -184,22 +282,26 @@ x = 'Sumeer';
 
 /////// 2nd [FUNCTION SCOPE]: Each and every function creates a scope. And the variables declared inside that function scope are only accessible inside that function. This is also called a LOCAL SCOPE. So, outside of the function, the variables are not accessible at all.
 
-// Again, this is technically the same as the functions variable environment inside the function execution context, but we still need to give it the name of scope in this context, because blocks also creates scopes. However there is nothing as block execution context.
+// Again, this is technically the same as the functions **variable environment** inside the function execution context. 
 
 // Traditionally, only functions used to create scopes in JavaScript. But starting in ES6, blocks also creates scopes now. And with blocks, we mean everything that is between curly braces, such as the block of an if statement or a for loop.
 
 /////// 3rd [BLOCK SCOPE]: So just like with functions, variables declared inside a block are only accessible inside that block and not outside of it.
 
-// Now, the big difference is that block scopes only apply to variables declared with let or const. Means, only let and const variables are restricted to the block in which they were created. This is why we say that let and const variables are block scoped.
+blocks also creates scopes. However, there is nothing as block execution context.
+
+// Now, the big difference is that block scopes only apply to variables declared with let or const. Means, only let and const variables are restricted to the block in which they were created. 
+
+This's why we say that let and const variables are block scoped.
 
 //// What about var declared variables?
-// --> If we have a var declared variable inside of a block that variable would still be accessible outside of the block, and would be scoped to the current function or to the global scope.
+// --> If we have a var declared variable inside of a block that variable would still be accessible outside of that block, and would be scoped to the current function or to the global scope.
 
 // And so we say that var is function scoped.
 
 // So in ES5 and before, we only had global scope and function scope. And that's why ES5 variables declared with var, only care about functions, but not about blocks. They simply ignore them.
 
-// Finally, starting in ES6, all functions are now also block scoped, at least in 'strict mode';
+// Finally, starting in ES6, all functions are now also block scoped, at least in 'strict mode'; 
 
 // And just like with let and const variables, this means that functions declared inside a block are only accessible inside that block.
 
@@ -236,14 +338,19 @@ x = 'Sumeer';
 ///////// Scope Chain Vs. Call Stack /////////
 
 // Video time stand: 17:00 for visual example and better understanding.
-
+*/
 ///////////////////////////////////////////
-/////////////// Scoping in Practice
-
+/////////////// 007 Scoping in Practice
+/*
 // Watch the video again if you have any doubts.
 
-///////////////////////////////////////////
-///////// Variable Environment_ Hoisting and The TDZ
+** functions are block scoped and that is only true for strict mode.
+
+That means if you use 'use strict' at the beginning of your code than remember your functions are going to be block scoped.
+
+*/
+////////////////////////////////////////////////////////
+///////// 008 Variable Environment_ Hoisting and The TDZ
 
 //// How Variables are created in JavaScript?
 
@@ -253,3 +360,8 @@ x = 'Sumeer';
 // Instead, behind the scenes before execution code is scanned for variable declarations. A new property is created in the variable environment object. And that's how hoisting really works.
 
 /// Now, hoisting does not work the same for all variable types.
+
+// Watch the video again if you don't get something
+
+//////////////////////////////////////////
+///////// 009 Hoisting and TDZ in Practice
