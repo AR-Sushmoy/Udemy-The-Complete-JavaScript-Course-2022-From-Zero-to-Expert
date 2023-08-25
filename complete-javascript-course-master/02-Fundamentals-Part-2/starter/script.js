@@ -529,7 +529,7 @@ const _firstObject = {
 // Now, the big difference between object and array is that in Objects, the order of these values does not matter at all when we want to retrieve them.
 
 /////////////////////////////////////////////////
-//// 013 Dot vs. Bracket Notation(How to retrieve data from objects) ////
+///////// 013 Dot vs. Bracket Notation  /////////
 /////////////////////////////////////////////////
 
 // Now, we are going learn how to change data in objects, how to retrieve data from objects usign both the dot and the bracket notation.
@@ -555,7 +555,7 @@ const nameKey = "Name"; // Name is the repeating part of the first two propertie
 console.log(sushmoy["first" + nameKey]);
 console.log(sushmoy["last" + nameKey]);
 */
-// As you can see in line 523 - 524, we don't have to explicitly write the string here but instead we can compute it from some operation.
+// As you can see above, we don't have to explicitly write the string here but instead we can compute it from some operation.
 
 // Doing something like this is common that's why it's impotant that we understand that in the square bracket we could put any expression here
 

@@ -539,6 +539,7 @@ const scorers = {};
 for (const player of game.scored) {
   scorers[player] ? scorers[player]++ : (scorers[player] = 1);
 }
+console.log(scorers);
 */
 
 /*

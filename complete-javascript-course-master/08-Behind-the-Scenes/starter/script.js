@@ -933,9 +933,9 @@ addArrow(7, 8); // OUTPUT: arguments is not defined at addArrow
  * But still it's important that you are aware that this arguments keywords exists.
  */
 
-/////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
 // 013 Primitives vs. Objects (Primitive vs. Reference Types) //
-/////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
 
 // Primitives are numbers, string, boolean's and etc.
 /*
@@ -1016,9 +1016,9 @@ console.log('Frined', friend);
  * [[[Important points to remember]]]:
  *
  * 1. So when we declare a variable like age equals 30,
- * what actually happens inside the JavaScript engine and the computer's memory?
+ * QUESTION: what actually happens inside the JavaScript engine and the computer's memory?
  *
- * Answer: First in the call stack JavaScript will create a so-called unique identifier that holds the variable name. Then a piece of memory will be allocated with a certain address, let's say 0001.
+ * ASNWER: First in the call stack JavaScript will create a so-called unique identifier that holds the variable name. Then a piece of memory will be allocated with a certain address, let's say 0001.
  *
  * Finally the value would be stored in memory at the specified address. So in this case, the value 30 will be specified/stored at memory address 0001.
  *
@@ -1049,7 +1049,8 @@ console.log('Frined', friend);
  * 5. Tt's a misconception that all variables declared with const are immutable. In fact, that is only true for primitive values, but not for reference values.
  *
  * Question: Why variables declared with const are not immutable / changable?
- * Answer: we create a new variable called Friend that we set equal to the Me object. So what will happen here? Well, just like with primitive values, the Friend identifier will point to the exact same memory address as the Me identifier. And again, that address contains the reference, which then points to the object itself. And like this the Friend object is now essentially the exact same as the Me object. Do you see that here in the diagram? So here comes the interesting part because now we're actually gonna change a property in the Friend object by setting friend.age to 27. So what happens then is that the object is found in the heap, and the 30 is changed to 27. Great. And by the way, even though we defined the Friend variable as a constant, we can actually still manipulate the object without problems. And when we think about that, it makes sense because we're actually not changing the value in memory for the Friend identifier, it is still D30F. So the reference to the object. All we did was to change the value in the heap, and that's not a problem.
+ * Answer: we create a new variable called Friend that we set equal to the Me object. So what will happen here? Well, just like with primitive values, the Friend identifier will point to the exact same memory address as the Me identifier. And again, that address contains the reference, which then points to the object itself. And like this the Friend object is now essentially the exact same as the Me object.
+ * Do you see that here in the diagram? So now comes the interesting part because we're gonna change a property in the Friend object by setting friend.age to 27. So what happens then is that the object is found in the heap, and the 30 is changed to 27. Great. And by the way, even though we defined the Friend variable as a constant, we can actually still manipulate the object without problems. And when we think about that, it makes sense because we're actually not changing the value in memory for the Friend identifier, it is still D30F. So the reference to the object. All we did was to change the value in the heap, and that's not a problem.
  *
  *
  * 6. Another important implication of this, is that whenever you think that you're copying an object, you're really just creating a new variable that points to the exact same object.
