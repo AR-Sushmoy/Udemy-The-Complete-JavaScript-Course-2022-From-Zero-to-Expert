@@ -615,8 +615,6 @@ console.log(sushmoy.calcAge());
 /**
  * Another way we call functions is by simply calling them as normal functions.
   
- * So not as a method and so not attached to any object.
-  
  **** In this case, the 'this' keyword, will simply be undefined.
   
  * However, that is only valid for strict mode. So if you're not in strict mode, this will actually point to the global object, 
@@ -646,17 +644,16 @@ console.log(sushmoy.calcAge());
  */
 
 /**
- * Finally, if a function is called as an event listener, then the this keyword will always point to the DOM element that the handler function is attached to.
+ * Finally, if a function is called as an event listener, then the 'this' keyword will always point to the DOM element that the handler function is attached to.
  *
  * Pretty straight forward 😉
  */
 
 /**
- * It's also important to know what the, this keyword is not. 
+ * It's also important to know what the, 'this' keyword is not:  
+ * 1) So the 'this' keyword will never point to the function in which we are using it.
   
- * So the this keyword will never point to the function in which we are using it.
-  
- * Also, the this keyword will never point to the variable environment of the function.
+ * 2) Also, the 'this' keyword will never point to the variable environment of the function.
  */
 
 ////////////////////////////////////////////////////
@@ -690,7 +687,7 @@ calcAgeArrow(2004); // OUTPUT: 19, Window object
 /**
  * Explanation: Arrow functions do not get their own 'this keyword'.
  
- * Instead, if you use 'the this variable' in an arrow function, it will simply be the this keyword of the parent function.
+ * Instead, if you use 'the this variable' in an arrow function, it will simply be the 'this' keyword of the parent function.
  
  * Because it simply gets picked up from the outer lexical scope of the arrow function.
  
@@ -710,12 +707,12 @@ arisu.calcAge(); // OUTPUT: 23, arisu object
 */
 
 /**
- **** Important point to remember is that, the 'this' keyword will point to the object that is calling the method.
+ **** IMPORTANT point to remember is that, the 'this' keyword will point to the object that is calling the method.
  
  * That does not mean that the 'this' keyword will only point at the object in which we worte the method.
  */
 
-// For example:
+// For example: [Method Borrowing]
 
 /*
 const yusagi = {
@@ -736,8 +733,8 @@ year: 2005
 */
 
 /**
- * Above we can see that the calcAge function is also in the new arisu object.
- * And of course it's still also in Jonah's, but now we copied it from one object to the other, and
+ * Above we can see that the calcAge function is also in the new yusagi object.
+ * And of course it's still also in arisu object, but now we copied it from one object to the other, and
  
  * This is called to method borrowing.
  */
@@ -748,7 +745,7 @@ yusagi.calcAge();
 // OUTPUT: 18, {year: 2005, calcAge: f}
 
 /**
- * Explanation: In this method call here the 'this' keyword does now actually point to Matilda.
+ * Explanation: In this method call here the 'this' keyword does now actually point to yusagi.
  
  * So this proves the fact that the 'this' keyword always points to the object that is calling the method.
  
@@ -782,7 +779,7 @@ f();
  
  * And therefore it is just a regular function call.
  
- * In this case, the 'this' keyword, will simply be undefined. becasue of the strict mode
+ * In this case, the 'this' keyword, will simply be undefined. becasue of the 'use strict' strict mode.
  */
 
 /////////////////////////////////////////////////////////
@@ -988,7 +985,7 @@ console.log('Frined', friend);
  */
 
 /**
- * Next, we need to remember about the JavaScript engine.
+ * IMPORTANT: Next, we need to remember about the JavaScript engine.
  *
  * So the engine has two components,
  *
