@@ -30,7 +30,7 @@ printing();
 
 // So, a function cannot only reuse a piece of code but it can also receive data and return data back. Basically, function is like a machine.
 
-// Prameters are like variables that are specifice only to this function and they will get defined once the function is called. Parameters represent the input data of this function.
+// Prameters are like variables that are specificd once to this function and they will get defined once the function is called. Parameters represent the input data of this function.
 
 function fruitProcessor(apples, oranges) {
   const juice = `Juice with ${apples} apples and ${oranges} oranges.`; // so, here we build a string using the input data we get into the function.
@@ -41,7 +41,7 @@ function fruitProcessor(apples, oranges) {
 console.log(fruitProcessor(5, 0)); // This is a way of showing the result on the console
 
 const appleJuice = fruitProcessor(3, 4);
-console.log(appleJuice); // This is another way ofshowing the result on the console
+console.log(appleJuice); // This is another way of showing the result to the console
 */
 
 /////////////////////////////////////////////////
@@ -147,7 +147,7 @@ const age3 = calcAge3(2000);
 console.log(age2, age3);
 */
 
-// In a Arrow function we actually don't need to write the return statement explicitly. It return the expression implicitly.
+// In a Arrow function we don't need to write the return statement explicitly. It return the expression implicitly.
 
 // Arrow function is excellent for single one-liner functions.
 
@@ -334,7 +334,7 @@ console.log(friends.length); // we can write this to check the length of the Arr
 
 console.log(friends[friends.length - 1], yrs[yrs.length - 1]); // So, we can even write expressions inside those square brackets.
 
-// So, this square bracket syntax is not only for retrieving elements from the Array but we can also change it to add elements to the Array.
+// So, this square bracket syntax is not only for retrieving elements from the Array but we can also use it to add elements to the Array.
 
 friends[2] = "Kakashi";
 console.log(friends); // ["Yusagi", "Soho", "Kakashi"]
@@ -350,7 +350,7 @@ console.log(friends); // ["Yusagi", "Soho", "Kakashi"]
   friends = ["Bob", "Sahil", "Itachi"]; // Shows -> TypeError. Because this is illegal
 */
 
-// Next, an Array can hold values of different types all at the same time
+///////// Next, an Array can hold values of different types all at the same time //////////
 
 /*
 const mySelf = ["MD", "Abu", "Rayhan", "Sushmoy", 2023 - 2000]; 
@@ -443,7 +443,7 @@ console.log(newLength); // The return value of push method
 friends.unshift("Quazi");
 console.log(friends);
 
-// And just like the push() method the unshift() method also returns the length of the array.
+// And just like the push() method the unshift() method also returns the length of the updated array.
 
 ///////// REMOVE Elements: ////////
 
@@ -618,7 +618,7 @@ const sushmoy = {
   },
 };
 */
-// So any function that is attached to an object is called a method(clacAge).
+// So any function that is attached to an object is called a method. For instance, clacAge.
 
 // So if you can think of functions as simply being values then you can see that a method is actually also a property.It just happens to be a property(calcAge) that holds a function value.
 /*
@@ -628,7 +628,7 @@ console.log(sushmoy["clacAge"](2000));
 
 // All right, now you might have noticed that the birth year 2000, that we passed in the method as an argument is actually already defined in the sushmoy object itself up there, right?
 
-// So, writing the same number in the argument is not ideal, because we are not keeping the code dry. So, we're violating the don't repeat yourself principle.
+// So, writing the same number in the argument is not ideal, because we are not keeping the code dry. So, we're violating the don't repeat yourself or DRY principle.
 
 // So if we know the birth year of sushmoy, it would only be written in one place, not in multiple places, because if that might change, then we have to change it everywhere. Again which is not ideal.
 
@@ -654,7 +654,11 @@ const sushmoy = {
 
 console.log(sushmoy.clacAge());
 */
-// So the {this} key word or the {this} variable is equal to the object(sushmoy) on which the method(clacAge) is called, or in other words, it is equal to the object(sushmoy) calling the method(clacAge).
+// So the {this} keyword or the {this} variable is equal to the object(sushmoy) on which the method(clacAge) is called, or in other words, it is equal to the object(sushmoy) calling the method(clacAge).
+
+/**
+ * ** IMPORTANT ** IMPORTANT ** IMPORTANT ** IMPORTANT **
+ */
 
 // Now, let's say that we need to access the age multiple times throughout our program. So let's say in four places of our application, we need to access the age. So what happens here is that a function will get called a total of four times. And so this computation here will be done four times. A heavier computation like this that takes more time, and so it would be a bad practice to do this multiple times. Instead, what we can do is to just calculate the age once, then store it in the object, and then when we need it at a later point, we can then just retrieve the age as a property from the object.
 
@@ -684,6 +688,30 @@ console.log(sushmoy.age);
 ////////////////// Challenge //////////////////
 // Make a method inside the object that says,
 // "Sushmoy is a 23 years old software developer, and has a drivers license" OR "Sushmoy is a 23 years old software developer, and has no drivers license"
+
+////// 3rd Attempt [25-10-23] //////
+/*
+const sushmoy = {
+  firstName: "Md. Abu Rayhan",
+  lastName: "Sushmoy",
+  job: "Software developer",
+  birthYear: 2000,
+  hasDriversLicense: false,
+  calcAge: function () {
+    this.age = 2023 - this.birthYear;
+    return this.age;
+  },
+  getSummery() {
+    return `${this.lastName} is a ${this.age} years old ${this.job}, and has ${
+      this.hasDriversLicense ? "a" : "no"
+    } drivers license`;
+  },
+};
+
+sushmoy.calcAge();
+
+console.log(sushmoy.getSummery());
+*/
 
 ////// 2nd Attempt [23-07-23] //////
 /*
@@ -884,7 +912,7 @@ for (let i = sara.length - 1; i >= 0; i--) {
 for (let exercise = 1; exercise < 4; exercise++) {
   console.log(`---- Starting exercise ${exercise} ----`);
   for (let rep = 1; rep < 6; rep++) {
-    console.log(`Exercise - ${exercise}: lifting weight repetation ${rep} 🏋🏻‍♂️`);
+    console.log(`Exercise - ${exercise}: lifting weight repetition ${rep} 🏋🏻‍♂️`);
   }
 }
 */
@@ -924,7 +952,7 @@ while (rep < 11) {
 /*
 let dice = Math.trunc(Math.random() * 6) + 1;
 
-// So, math is basically an object that JavaScript gives us, and on there, we have a lot of different methods, and random is one of them. Math.random() gives us a number between zero and one in decimal which means 0.1111 to maximum 0.999999 . So whenever we run this, it will give us a new number. And it's always different from the one before. Now if we want a number between one and 6, we will have start by multiplying this by 6. And so now we have this decimal number here, basically ranging between zero and 6. But all this decimal here is just noise, so let's removed that. And for that, we use Math.trunc() . Now we have a number which goes from zero to 5. Because the result of math.trunc(Math.random()) will never really include the number 6. It might only include like 5.999999, but now we're cutting off that decimal part. And so we are now left with a number between zero and five. And so to elevate it to between one and six, all you have to do is to add one here.
+// So, math is basically an object that JavaScript gives us, and in there, we have a lot of different methods, and random is one of them. Math.random() gives us a number between zero and one in decimal which means 0.1111 to maximum 0.999999 . So whenever we run this, it will give us a new number. And it's always different from the one before. Now if we want a number between one and 6, we will have start by multiplying this by 6. And so now we have this decimal number here, basically ranging between zero and 6. But all this decimal here is just noise, so let's removed that. And for that, we use Math.trunc() . Now we have a number which goes from zero to 5. Because the result of math.trunc(Math.random()) will never really include the number 6. It might only include like 5.999999, but now we're cutting off that decimal part. And so we are now left with a number between zero and five. And so to elevate it to between one and six, all you have to do is to add one here.
 
 
 while (dice !== 6) {
@@ -934,3 +962,50 @@ while (dice !== 6) {
 }
 */
 // conclusion, the while loop does not have to depend on any counter variable. So whenever you need a loop without a counter, you can reach for the while loop. So basically that happens whenever you do not know beforehand how many iterations the loop will have. So in that situation the while loop is the right tool for the job.
+
+///// Exercise: find the factorial of a given number
+
+// Solution 01:
+let num = Number(prompt("Enter any Integer: "));
+let fact = 1;
+
+while (num > 0) {
+  fact *= num;
+  num--;
+}
+// for (let i = num; i > 0; i--) {
+//   fact *= i;
+// }
+console.log(fact);
+
+// Solution 02: (Using a function)
+let num1 = Number(prompt("Enter any Integer: "));
+
+const factorial = function (number) {
+  let fact = 1;
+
+  // while (number > 0) {
+  //   fact *= number;
+  //   number--;
+  // }
+  for (let i = number; i > 0; i--) {
+    fact *= i;
+  }
+  console.log(fact);
+};
+
+factorial(num1);
+
+///// Exercise: finding the sum of numbers 0 to n
+
+let num2 = Number(prompt("Enter any Integer: "));
+let sum = 0;
+let count = 0;
+// for (let count = 0; count <= num2; count++) {
+//   sum += count;
+// }
+while (count <= num2) {
+  sum += count;
+  count++;
+}
+console.log(sum);

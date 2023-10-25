@@ -88,7 +88,7 @@ console.log(typeof null);
 */
 
 /* 
-output says it's an object. Whereas this should print null. Now, about this bug JavaScript says that a type of null is an object and this doesn't make any sense at all. And so this is regarded as a bug or error in JavaScript. However, this bug is never corrected for Legacy reasons. But null is ofcourse is not an object. This should return null as undefined returns undefined as expected. 
+output says it's an object. Whereas this should print null. Now, about this bug JavaScript says that a type of null is an object and this doesn't make any sense at all. And so this is regarded as a bug or error in JavaScript. However, this bug is never corrected for Legacy reasons. But null ofcourse is not an object. This should return null same as undefined returns undefined as expected. 
 */
 
 // const birthYear = 2000;
@@ -252,9 +252,9 @@ console.log("I'm " + "23" + " years old");
 
 // type coercion happens in template literals too.It also takes all the number values and converts them to strings automatically.
 
-// Now, Actually not all the operators do type coercion to string
+// Now, Actually not all the operators do type coercion to strings
 console.log("23" - "10" - 3); // output: 10
-// The minus '-' operator actually triggers the opposite conversion means it converts strings to numbers
+// The minus '-' operator actually triggers the opposite conversion. Means, it converts strings to numbers
 console.log("23" * "2");
 console.log("23" / "2");
 // Similarly, '*' and '/' operator converts strings to number
@@ -273,13 +273,13 @@ console.log(Number("Sushmoy")); // Output: NaN
 
 // They are not false initilally but they will become false when we attempt to convert them to boolean.
 
-// On the contrary, Everything else are our so-called truthy values meaning values that will be converted to true.
+// On the contrary, Everything else are our so-called truthy values meaning values that will be turned to true.
 
 //For example: Any number that is not zero, any string that is not an empty string or any empty object will be converted to true when we try to convert them into a boolen.
 /*
 console.log(Boolean(0)); // false
 console.log(Boolean(undefined)); // false
-console.log(Boolean("Sushmoy"));
+console.log(Boolean("Sushmoy")); // true
 console.log(Boolean({})); // true
 console.log(Boolean(" ")); // false
 */
